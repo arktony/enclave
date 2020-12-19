@@ -7,51 +7,100 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#3063A0"><!-- End FAVICONS -->
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-  <!-- GOOGLE FONT -->
-  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600" rel="stylesheet"><!-- End GOOGLE FONT -->
-  <!-- BEGIN PLUGINS STYLES -->
-  <link rel="stylesheet" href="assets/vendor/open-iconic/css/open-iconic-bootstrap.min.css">
-  <link rel="stylesheet" href="assets/vendor/aos/aos.css">
-  <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.css">
-  <link rel="stylesheet" href="assets/vendor/flatpickr/flatpickr.min.css">
-  <!-- END PLUGINS STYLES -->
-  <!-- BEGIN THEME STYLES -->
-  <link rel="stylesheet" href="assets/stylesheets/theme.min.css" data-skin="default">
-  <link rel="stylesheet" href="assets/stylesheets/theme-dark.min.css" data-skin="dark">
-  <link rel="stylesheet" href="assets/stylesheets/custom.css">
-  <script>
-    var skin = localStorage.getItem('skin') || 'default';
-    var isCompact = JSON.parse(localStorage.getItem('hasCompactMenu'));
-    var disabledSkinStylesheet = document.querySelector('link[data-skin]:not([data-skin="' + skin + '"])');
-    // Disable unused skin immediately
-    disabledSkinStylesheet.setAttribute('rel', '');
-    disabledSkinStylesheet.setAttribute('disabled', true);
-    // add flag class to html immediately
-    if (isCompact == true) document.querySelector('html').classList.add('preparing-compact-menu');
-  </script><!-- END THEME STYLES -->
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="favicon.ico">
+  
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
+  
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="assets/css/vendor.min.css">
+  
+  <!-- CSS Front Template -->
+  <link rel="stylesheet" href="assets/css/theme.minc619.css?v=1.0">
 </head>
 
 <body>
   <app-root></app-root>
-  <!-- BEGIN BASE JS -->
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/popper.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script> <!-- END BASE JS -->
-  <!-- BEGIN PLUGINS JS -->
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/pace/pace.min.js"></script>
-  <script src="assets/vendor/stacked-menu/stacked-menu.min.js"></script>
-  <script src="assets/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-  <script src="assets/vendor/flatpickr/flatpickr.min.js"></script>
-  <script src="assets/vendor/easy-pie-chart/jquery.easypiechart.min.js"></script>
-  <script src="assets/vendor/chart.js/Chart.min.js"></script>
-  <!-- END PLUGINS JS -->
-  <!-- BEGIN THEME JS -->
-  <script src="assets/javascript/theme.min.js"></script>
-  <!-- END THEME JS -->
-  <!-- BEGIN PAGE LEVEL JS -->
-  <script src="assets/javascript/pages/dashboard-demo.js"></script>
-  <!-- END PAGE LEVEL JS -->
+  <!-- JS Implementing Plugins -->
+  <script src="assets/js/vendor.min.js"></script>
+  
+  <!-- JS Front -->
+  <script src="assets/js/theme.min.js"></script>
+  
+  <!-- JS Plugins Init. -->
+  <script>
+    $(document).on('ready', function () {
+      // INITIALIZATION OF HEADER
+      // =======================================================
+      var header = new HSHeader($('#header')).init();
+
+
+      // INITIALIZATION OF MEGA MENU
+      // =======================================================
+      var megaMenu = new HSMegaMenu($('.js-mega-menu')).init();
+
+
+      // INITIALIZATION OF UNFOLD
+      // =======================================================
+      var unfold = new HSUnfold('.js-hs-unfold-invoker').init();
+
+
+      // INITIALIZATION OF FORM VALIDATION
+      // =======================================================
+      $('.js-validate').each(function () {
+        $.HSCore.components.HSValidation.init($(this), {
+          rules: {
+            confirmPassword: {
+              equalTo: '#signupPassword'
+            }
+          }
+        });
+      });
+
+
+      // INITIALIZATION OF TEXT ANIMATION (TYPING)
+      // =======================================================
+      var typed = $.HSCore.components.HSTyped.init(".js-text-animation");
+
+
+      // INITIALIZATION OF SHOW ANIMATIONS
+      // =======================================================
+      $('.js-animation-link').each(function () {
+        var showAnimation = new HSShowAnimation($(this)).init();
+      });
+
+
+      // INITIALIZATION OF FANCYBOX
+      // =======================================================
+      $('.js-fancybox').each(function () {
+        var fancybox = $.HSCore.components.HSFancyBox.init($(this));
+      });
+
+
+      // INITIALIZATION OF SLICK CAROUSEL
+      // =======================================================
+      $('.js-slick-carousel').each(function () {
+        var slickCarousel = $.HSCore.components.HSSlickCarousel.init($(this));
+      });
+
+
+      // INITIALIZATION OF GO TO
+      // =======================================================
+      $('.js-go-to').each(function () {
+        var goTo = new HSGoTo($(this)).init();
+      });
+    });
+  </script>
+  
+  <!-- IE Support -->
+  <script>
+    if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) document.write('<script src="../assets/vendor/babel-polyfill/dist/polyfill.js"><\/script>');
+  </script>
 </body>
 
 </html>

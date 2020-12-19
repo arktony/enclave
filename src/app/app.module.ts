@@ -7,8 +7,10 @@ import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing.component';
 import { HomeComponent } from './home/home.component';
 import { TopperComponent } from './topper/topper.component';
-import { SidewaysComponent } from './sideways/sideways.component';
 import { FooterComponent } from './footer/footer.component';
+import { LandingHeadComponent } from './landing-head/landing-head.component';
+import { LandingmainComponent } from './landingmain/landingmain.component';
+import { SidelogComponent } from './sidelog/sidelog.component';
 
 @NgModule({
   declarations: [
@@ -16,8 +18,10 @@ import { FooterComponent } from './footer/footer.component';
     LandingComponent,
     HomeComponent,
     TopperComponent,
-    SidewaysComponent,
-    FooterComponent
+    FooterComponent,
+    LandingHeadComponent,
+    LandingmainComponent,
+    SidelogComponent
   ],
   imports: [
     BrowserModule,
