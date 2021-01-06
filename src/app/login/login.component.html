@@ -1,8 +1,5 @@
-<div>
-    <!-- Signup Form -->
-    <form #f="ngForm" (ngSubmit)="signIn(f.value)" class="js-validate" style="text-align:center;
- padding-top: 80px; padding-left: 400px;
-  padding-right: 400px;">
+<div class="sidebar-content py-2 px-2">
+    <form #f="ngForm" (ngSubmit)="signIn(f.value)">
         <!-- Login -->
         <div id="login">
             <!-- Title -->
@@ -13,33 +10,33 @@
             <!-- End Title -->
 
             <!-- Input Group -->
-            <div class="js-form-message mb-4">
+            <div class="mb-4">
                 <label class="input-label">Email</label>
                 <div class="input-group input-group-sm mb-2">
-                    <input type="email" class="form-control" name="username" ngModel 
-                        placeholder="Email" aria-label="Email" required>
+                    <input type="email" class="form-control" name="username" ngModel placeholder="Email"
+                        aria-label="Email" required>
                 </div>
             </div>
             <!-- End Input Group -->
 
             <!-- Input Group -->
-            <div class="js-form-message mb-3">
+            <div class="mb-3">
                 <label class="input-label">Password</label>
                 <div class="input-group input-group-sm mb-2">
-                    <input type="password" class="form-control" name="password" ngModel
-                        placeholder="Password" aria-label="Password" required>
+                    <input type="password" class="form-control" name="password" ngModel placeholder="Password"
+                        aria-label="Password" required>
                 </div>
             </div>
             <!-- End Input Group -->
 
             <div class="d-flex justify-content-end mb-4">
                 <a class="js-animation-link small link-underline" href="javascript:;" data-hs-show-animation-options='{
-                               "targetSelector": "#forgotPassword",
-                               "groupName": "idForm",
-                               "animationType": "css-animation",
-                               "animationIn": "slideInUp",
-                               "duration": 400
-                             }'>Forgot Password?</a>
+                           "targetSelector": "#forgotPassword",
+                           "groupName": "idForm",
+                           "animationType": "css-animation",
+                           "animationIn": "slideInUp",
+                           "duration": 400
+                         }'>Forgot Password?</a>
             </div>
 
             <div class="mb-3">
@@ -52,7 +49,7 @@
 
             <a class="btn btn-sm btn-ghost-secondary btn-block mb-2" href="#">
                 <span class="d-flex justify-content-center align-items-center">
-                    <img class="mr-2" src="../assets/img/160x160/img17.png" alt="Image Description" width="14"
+                    <img class="mr-2" src="/assets/img/160x160/img17.png" alt="Image Description" width="14"
                         height="14">
                     Sign In with Google
                 </span>
@@ -61,15 +58,54 @@
             <div class="text-center">
                 <span class="small text-muted">Do not have an account?</span>
                 <a class="js-animation-link small font-weight-bold" href="javascript:;" data-hs-show-animation-options='{
-                               "targetSelector": "#signup",
-                               "groupName": "idForm",
-                               "animationType": "css-animation",
-                               "animationIn": "slideInUp",
-                               "duration": 400
-                             }'>Sign Up
+                           "targetSelector": "#signup",
+                           "groupName": "idForm",
+                           "animationType": "css-animation",
+                           "animationIn": "slideInUp",
+                           "duration": 400
+                         }'>Sign Up
                 </a>
             </div>
         </div>
     </form>
-    <!-- End Signup Form -->
 </div>
+<!-- <div>
+    <form #f="ngForm" (ngSubmit)="signIn(f.value)">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div> -->
+<!-- <div class="login-form">
+    <form #f="ngForm" (ngSubmit)="signIn(f.value)">
+        <div class="avatar">
+            <img>
+        </div>
+        <h2 class="text-center">Member Login</h2>
+        <div class="form-group">
+            <input type="text" class="form-control" name="username" ngModel placeholder="Username" required="required">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" name="password" ngModel placeholder="Password" required="required">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+        </div>
+        <div class="bottom-action clearfix">
+            <label class="float-left form-check-label"><input type="checkbox"> Remember me</label>
+            <a href="#" class="float-right">Forgot Password?</a>
+        </div>
+    </form>
+    <p class="text-center small">Don't have an account? <a href="#">Sign up here!</a></p>
+</div> -->

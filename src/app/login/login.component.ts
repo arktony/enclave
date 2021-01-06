@@ -11,7 +11,6 @@ export class LoginComponent implements OnInit {
 
   invalidLogin: boolean | undefined;
 
-
   constructor(
     private router: Router,
     private authService: AuthService
@@ -19,11 +18,12 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
   signIn(credentials: any) {
     this.authService.login(credentials)
       .subscribe(result => {
         if (result !== null)
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['/home']);
         else
           this.invalidLogin = true;
       });

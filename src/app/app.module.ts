@@ -14,6 +14,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardHeadComponent } from './dashboard-head/dashboard-head.component';
+import { AuthGuard } from './services/auth-gaurd.service';
+import { SideListingComponent } from './side-listing/side-listing.component';
+import { CourseListingComponent } from './course-listing/course-listing.component';
+import { CoursePageComponent } from './course-page/course-page.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,10 @@ import { DashboardHeadComponent } from './dashboard-head/dashboard-head.componen
     LandingmainComponent,
     LoginComponent,
     DashboardComponent,
-    DashboardHeadComponent
+    DashboardHeadComponent,
+    SideListingComponent,
+    CourseListingComponent,
+    CoursePageComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +40,7 @@ import { DashboardHeadComponent } from './dashboard-head/dashboard-head.componen
     FormsModule,
     AppRoutingModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
